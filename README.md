@@ -1,7 +1,11 @@
 # Projeto Consumidor de Filmes
 
-## Padrıes Utilizados
+## Objetivo
+
+Desenvolver uma API que apresente os pr√≥ximos filmes a serem lan√ßados no cinema.
+
+## Padr√µes Utilizados
 
 ## Bibliotecas Utilizadas
 
-## Outras ObservaÁıes
+## Outras Observa√ß√µes
