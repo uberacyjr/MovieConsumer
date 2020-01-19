@@ -46,7 +46,9 @@ APIs disponíveis:
    Foi escolhida para facilitar a interação com a REST API do movie database. Por ter uma comunidade grande, é uma biblioteca em constante evolução com poucos bugs.
  - https://www.newtonsoft.com/json
    NewtonSoft para facilitar a serialização e desserialização.
-
+ - https://www.nuget.org/packages/Microsoft.NET.Test.SDK
+   Biblioteca para testes da mBcrosoft
+   
 ## Outras Informações
 - Projeto de teste feito para realizar testes de integração com a API consumida. 
 - Rodar todos os testes toda vez que alterar algo ou para garantir que a parte da integração entre a aplicação e a API está funcionando como esperado.
