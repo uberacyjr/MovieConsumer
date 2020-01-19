@@ -17,6 +17,17 @@ APIs disponíveis:
   - https://localhost:5001/api/filme?language=en-US (Recupera filmes a serem lançados de acordo com a lingua selecionada exemplo: [en-US, de, pt-BR])
   - https://localhost:5001/api/filme?language=en-US&page=2 (Recupera filmes a serem lançados de acordo com a lingua selecionada exemplo: [en-US, de, pt-BR] e a página que deseja visualizar exemplo [2])
 
+## Arquitetura do Projeto
+
+Filme.Api
+ - Camada Web API responsável por intermediar os clients com as regras do negócio. 
+Filme.Core
+ - Camada de negócio, responsável por qualquer tipo de interação que corresponde ao negócio. Possui DTO, Services e Interfaces
+Filme.Infraestrutura
+  - Camada responsável por operações de infraestrutura, consumir API utilizando rest sharp e arquivo de configurações.
+Filme.Testes
+ - Camada responsável por testes de integração entre a estrutura da aplicação Consumidor de Filmes e a The Movie Database API
+
 ## Padrões Utilizados
  - TDD: Desenvolvimento Orientado por Testes foi utilizado para melhorar a segurança no desenvolvimento e manutenções futuras.
  - DTO: Data Transfer Object foi utilizado para representar as estruturas json consumidas nas responses da API.
