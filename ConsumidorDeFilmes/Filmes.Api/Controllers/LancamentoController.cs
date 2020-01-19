@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using Filmes.Core.Interfaces;
 using Filmes.Core.ResponseModels;
+using Filmes.Infraestrutura.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace Filmes.Api.Controllers
 {

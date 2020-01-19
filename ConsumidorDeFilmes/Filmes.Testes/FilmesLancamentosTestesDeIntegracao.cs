@@ -3,6 +3,7 @@ using System.Linq;
 using Filmes.Core.Interfaces;
 using Filmes.Core.ResponseModels;
 using Filmes.Core.Services;
+using Filmes.Infraestrutura.InfraestruturaServices;
 
 namespace Filmes.Testes
 {
@@ -13,7 +14,7 @@ namespace Filmes.Testes
 
         public FilmesLancamentosTestesDeIntegracao()
         {
-            _movie = new MovieUpComingServices();
+            _movie = new MovieUpComingServices(new ApiSettingsService());
         }
 
         [TestMethod]

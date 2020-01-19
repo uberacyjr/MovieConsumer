@@ -2,6 +2,7 @@
 using System.Net;
 using Filmes.Core.Interfaces;
 using Filmes.Core.ResponseModels;
+using Filmes.Infraestrutura.Interfaces;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -12,9 +13,13 @@ namespace Filmes.Core.Services
     /// </summary>
     public class MovieUpComingServices : IMovieUpComing
     {
-        private const string Url = "https://api.themoviedb.org/3/movie/upcoming";
-        //TODO: Passar para o appsettings.json
-        private const string MovieApiKey = "a1de31f89cd7dc7847967f7b2c2dfe29";
+        private readonly IApiSettings _ApiSettings;
+        private readonly string Url;
+        public MovieUpComingServices(IApiSettings apiSettings)
+        {
+            _ApiSettings = apiSettings;
+            Url = _ApiSettings.ObterAppSettings().BaseUrl + "/movie/upcoming";
+        }
 
         public MovieUpComingDTO GetMoviesUpComing(string language, int page, string region)
         {
@@ -47,16 +52,16 @@ namespace Filmes.Core.Services
             return resultado;
         }
 
-        private static RestClient CriarRequestApi(out RestRequest request)
+        private RestClient CriarRequestApi(out RestRequest request)
         {
             var client = new RestClient(Url);
             request = new RestRequest(Url);
             return client;
         }
 
-        private static void AdicionarParametrosQueryString(string language, int page, string region, IRestRequest request)
+        private void AdicionarParametrosQueryString(string language, int page, string region, IRestRequest request)
         {
-            request.AddParameter("api_key", MovieApiKey);
+            request.AddParameter("api_key", _ApiSettings.ObterAppSettings().MovieApiKey);
             request.AddParameter("language", language);
             request.AddParameter("page", page);
             request.AddParameter("regioan", region);
