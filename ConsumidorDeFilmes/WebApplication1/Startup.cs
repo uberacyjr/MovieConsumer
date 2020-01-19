@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Filmes.Core.Interfaces;
 using Filmes.Core.Services;
 using Filmes.Infraestrutura.InfraestruturaServices;
@@ -12,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace WebApplication1
+namespace Filme.API
 {
     public class Startup
     {

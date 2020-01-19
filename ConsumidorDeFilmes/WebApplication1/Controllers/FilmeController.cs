@@ -6,7 +6,7 @@ using Filmes.Core.ResponseDTO.BaseDTO;
 using Filmes.Core.ResponseDTO.MoviesUpComingDTO;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication1.Controllers
+namespace Filme.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
