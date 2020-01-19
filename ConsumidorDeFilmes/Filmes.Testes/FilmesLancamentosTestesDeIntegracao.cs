@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
+﻿using System.Linq;
 using Filmes.Core.Interfaces;
 using Filmes.Core.ResponseDTO.MoviesUpComingDTO;
 using Filmes.Core.Services;
 using Filmes.Infraestrutura.InfraestruturaServices;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Filmes.Testes
 {
