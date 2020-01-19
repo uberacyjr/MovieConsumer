@@ -5,14 +5,11 @@
 Desenvolver uma API que apresente os próximos filmes a serem lançados no cinema.
 
 ## Padrões Utilizados
- - TDD
-    Desenvolvimento Orientado por Testes foi utilizado para melhorar a segurança no desenvolvimento e manutenções futuras
+ - TDD: Desenvolvimento Orientado por Testes foi utilizado para melhorar a segurança no desenvolvimento e manutenções futuras
 
- - DTO
-    Data Transfer Object foi utilizado para representar as estruturas json recuperadas nas responses da API.
+ - DTO: Data Transfer Object foi utilizado para representar as estruturas json recuperadas nas responses da API.
 
- - Injeção de Depêndencia
-    Utilizado para evitar o alto acomplamento e facilitar os testes
+ - Injeção de Depêndencia: Utilizado para evitar o alto acomplamento e facilitar os testes
 
 
 ## Bibliotecas Utilizadas
