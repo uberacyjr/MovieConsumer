@@ -23,7 +23,7 @@ APIs disponíveis:
    - Camada Web API responsável por intermediar os clients com as regras do negócio (Filme.Core). 
 ### Filme.Core
    - Camada de negócio, responsável por qualquer tipo de interação que corresponde ao negócio. Possui DTO, Services e Interfaces
-### Filme.Infraestrutura
+### Filme.Utils
    - Camada responsável por operações de infraestrutura, consumir API utilizando rest sharp e arquivo de configurações.
 ### Filme.Testes
    - Camada responsável por testes de integração entre a estrutura da aplicação Consumidor de Filmes e a The Movie Database API
