@@ -27,13 +27,6 @@ namespace Filmes.Testes
         }
 
         [TestMethod]
-        public void Quando_Requisitar_API_Sem_Parametros_Retorna_Lista_Filmes_Lancamentos_Com_Descricao_Dos_Generos()
-        {
-            MovieUpComingDTO upComingMovies = _movie.GetMoviesUpComing("pt-BR", 1, "");
-            Assert.IsTrue(upComingMovies.Results.Any(a=>a.Genres.Any()));
-        }
-
-        [TestMethod]
         public void Quando_Requisitar_API_Com_Parametro_Page_Maior_Que_Quinhentos_Retorna_Results_Vazio()
         {
             MovieUpComingDTO upComingMovies = _movie.GetMoviesUpComing("pt-BR", 501, "");
