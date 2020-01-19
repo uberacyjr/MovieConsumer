@@ -19,7 +19,7 @@ namespace Filmes.Core.Services
         private readonly IMovieApiConsumer _MovieApiConsumer;
         private readonly IMovieGenre _MovieGenre;
         private readonly string Url;
-        private readonly string EndPoint = "/movie/upcoming";
+        private const string EndPoint = "/movie/upcoming";
 
         public MovieUpComingServices(IApiSettings apiSettings, IMovieApiConsumer movieApiConsumer, IMovieGenre movieGenre)
         {

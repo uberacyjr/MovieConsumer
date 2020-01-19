@@ -1,4 +1,4 @@
-﻿namespace Filmes.Core.ResponseModels
+﻿namespace Filmes.Core.ResponseDTO.MoviesGenreDTO
 {
     public class GenreDTO
     {

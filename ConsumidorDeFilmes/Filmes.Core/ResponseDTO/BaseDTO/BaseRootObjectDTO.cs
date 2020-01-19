@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Filmes.Core.ResponseModels
+namespace Filmes.Core.ResponseDTO.BaseDTO
 {
     public class BaseRootObjectDTO
     {

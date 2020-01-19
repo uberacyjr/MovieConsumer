@@ -16,7 +16,7 @@ namespace Filmes.Core.Services
         private readonly IApiSettings _ApiSettings;
         private readonly IMovieApiConsumer _MovieApiConsumer;
         private readonly string Url;
-        private readonly string EndPoint = "/genre/movie/list";
+        private const string EndPoint = "/genre/movie/list";
 
         public MovieGenreServices(IApiSettings apiSettings, IMovieApiConsumer movieApiConsumer)
         {
@@ -52,6 +52,5 @@ namespace Filmes.Core.Services
         }
 
         private static Dictionary<string, string> CriarRequestParameters(string language) => new Dictionary<string, string> { { "language", language }};
-
     }
 }

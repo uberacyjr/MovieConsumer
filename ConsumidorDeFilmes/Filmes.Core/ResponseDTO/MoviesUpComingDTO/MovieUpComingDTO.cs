@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Filmes.Core.ResponseDTO.BaseDTO;
 
-namespace Filmes.Core.ResponseModels
+namespace Filmes.Core.ResponseDTO.MoviesUpComingDTO
 {
     public class MovieUpComingDTO : BaseRootObjectDTO
     {

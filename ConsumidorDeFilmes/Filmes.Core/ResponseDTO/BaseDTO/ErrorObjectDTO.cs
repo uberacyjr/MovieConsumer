@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Filmes.Core.ResponseModels
+namespace Filmes.Core.ResponseDTO.BaseDTO
 {
     public class ErrorObjectDTO
     {
