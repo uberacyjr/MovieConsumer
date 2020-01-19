@@ -39,7 +39,7 @@ namespace Filmes.Core.Services
                 resultado = JsonConvert.DeserializeObject<MovieUpComingDTO>(response.Content);
             else
             {
-                resultado.Errors = JsonConvert.DeserializeObject<ErrorObject>(response.Content);
+                resultado.Errors = JsonConvert.DeserializeObject<ErrorObjectDTO>(response.Content);
                 resultado.HttpStatusCode = resultado.HttpStatusCode;
                 resultado.Results = Enumerable.Empty<ResultDTO>().ToList();
             }

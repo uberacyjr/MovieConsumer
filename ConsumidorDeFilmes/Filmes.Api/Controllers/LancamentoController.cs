@@ -21,8 +21,8 @@ namespace Filmes.Api.Controllers
         public IActionResult Get(string language = "pt-BR", int page = 1, string region = "")
         {
             MovieUpComingDTO moviesUpComing = _MovieUpComingServices.GetMoviesUpComing(language, page, region);
-            
-            if(moviesUpComing.Results.Any())
+
+            if (moviesUpComing.Results.Any())
                 return Ok(moviesUpComing.Results);
 
             string mensagensDeValidacao = string.Join(", ", moviesUpComing.Errors.Errors);

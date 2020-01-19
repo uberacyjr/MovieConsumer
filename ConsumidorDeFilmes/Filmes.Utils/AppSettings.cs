@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Filmes.Utils
+namespace Filmes.Util
 {
     public class AppSettings
     {

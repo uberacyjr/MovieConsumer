@@ -11,11 +11,6 @@ namespace Filmes.Core.ResponseModels
         public DateDTO Dates { get; set; }
         public int Total_pages { get; set; }
         public HttpStatusCode HttpStatusCode { get; set; }
-        public ErrorObject Errors { get; set; }
-    }
-    
-    public class ErrorObject
-    {
-        public List<string> Errors { get; set; }
+        public ErrorObjectDTO Errors { get; set; }
     }
 }
