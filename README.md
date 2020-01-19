@@ -19,14 +19,10 @@ APIs disponíveis:
 
 ## Arquitetura do Projeto
 
-Filme.Api
- - Camada Web API responsável por intermediar os clients com as regras do negócio. 
-Filme.Core
- - Camada de negócio, responsável por qualquer tipo de interação que corresponde ao negócio. Possui DTO, Services e Interfaces
-Filme.Infraestrutura
-  - Camada responsável por operações de infraestrutura, consumir API utilizando rest sharp e arquivo de configurações.
-Filme.Testes
- - Camada responsável por testes de integração entre a estrutura da aplicação Consumidor de Filmes e a The Movie Database API
+Filme.Api: Camada Web API responsável por intermediar os clients com as regras do negócio. 
+Filme.Core: Camada de negócio, responsável por qualquer tipo de interação que corresponde ao negócio. Possui DTO, Services e Interfaces
+Filme.Infraestrutura: Camada responsável por operações de infraestrutura, consumir API utilizando rest sharp e arquivo de configurações.
+Filme.Testes: Camada responsável por testes de integração entre a estrutura da aplicação Consumidor de Filmes e a The Movie Database API
 
 ## Padrões Utilizados
  - TDD: Desenvolvimento Orientado por Testes foi utilizado para melhorar a segurança no desenvolvimento e manutenções futuras.
