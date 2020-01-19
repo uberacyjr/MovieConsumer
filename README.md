@@ -15,7 +15,7 @@ Rodar o comando "dotnet run" dentro da pasta Filmes.Api ou executar o projeto ut
 APIs disponíveis:
   - https://localhost:5001/api/filme (Recupera filmes a serem lançados com parametros default: language = pt-BR, pagina=1 e region = "")
   - https://localhost:5001/api/filme?language=en-US (Recupera filmes a serem lançados de acordo com a lingua selecionada exemplo: [en-US, de, pt-BR])
-  - https://localhost:5001/api/filme?language=en-US&page=2 (Recupera filmes a serem lançados de acordo com a lingua selecionada exemplo: [en-US, de, pt-BR] e a pagina que deseja visualizar exemplo [2])
+  - https://localhost:5001/api/filme?language=en-US&page=2 (Recupera filmes a serem lançados de acordo com a lingua selecionada exemplo: [en-US, de, pt-BR] e a página que deseja visualizar exemplo [2])
 
 ## Padrões Utilizados
  - TDD: Desenvolvimento Orientado por Testes foi utilizado para melhorar a segurança no desenvolvimento e manutenções futuras.
