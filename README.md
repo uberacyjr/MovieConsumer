@@ -3,11 +3,11 @@
 ## Objetivo
 
 Desenvolver uma API que apresente os próximos filmes a serem lançados no cinema.
-Site da API
- - https://developers.themoviedb.org/3/getting-started/introduction
-APIs consumidas
- - https://developers.themoviedb.org/3/movies/get-upcoming
- - https://developers.themoviedb.org/3/genres/get-movie-list
+### Site da API
+  - https://developers.themoviedb.org/3/getting-started/introduction
+### APIs consumidas
+  - https://developers.themoviedb.org/3/movies/get-upcoming
+  - https://developers.themoviedb.org/3/genres/get-movie-list
 
 ## Instruções de uso
 Rodar o comando "dotnet run" dentro da pasta Filmes.Api ou executar o projeto utilizando o IISExpress no visual studio 2019
