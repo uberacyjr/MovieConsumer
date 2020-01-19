@@ -39,7 +39,7 @@ APIs disponíveis:
  - Utilizado para evitar o alto acomplamento e facilitar os testes.
 ### DRY (não repita você mesmo) 
  - Encapsular lógicas parecidas/iguais em métodos únicos para tentar minimizar o máximo de código duplicado.
-### Single responsibility principle
+### Single Responsibility Principle
  - Princípio da responsabilidade única foi utilizado para simplificar classes e métodos de forma que cada um tenha o mínimo de responsabilidades para facilitar reaproveitamento de código e manutenções. 
 ### Princípios da Programação Orientada a Objetos (Abstração, Encapsulamento, Herança)
   - Utilizados para estruturar e criar o projeto Consumidor de Filmes
