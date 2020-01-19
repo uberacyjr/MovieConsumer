@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace Filmes.Api.Models
 {
-    public class FilmeDTO
+    public class TesteSettings
     {
+        public string MovieApiKey { get; set; }
     }
 }
