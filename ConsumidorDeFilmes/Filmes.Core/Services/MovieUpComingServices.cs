@@ -35,8 +35,7 @@ namespace Filmes.Core.Services
             _MovieApiConsumer.AdicionarParametrosQueryString(requestParameters, request);
             Task<IRestResponse> restResponse = _MovieApiConsumer.ObterResponseApi(client, request);
             MovieUpComingDTO upcomingMovies = DeserializarResponse(restResponse);
-            //AdicionarGeneroNosFilmes(language, upcomingMovies);
-
+            
             return upcomingMovies;
         }
 
