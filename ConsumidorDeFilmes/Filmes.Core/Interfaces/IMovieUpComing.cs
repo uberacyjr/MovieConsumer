@@ -1,4 +1,4 @@
-﻿using Filmes.Core.Models;
+﻿using Filmes.Core.ResponseModels;
 
 namespace Filmes.Core.Interfaces
 {

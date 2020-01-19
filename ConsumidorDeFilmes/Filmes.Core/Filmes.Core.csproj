@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Filmes.Utils\Filmes.Utils.csproj" />
+    <ProjectReference Include="..\Filmes.Utils\Filmes.Util.csproj" />
   </ItemGroup>
 
 </Project>

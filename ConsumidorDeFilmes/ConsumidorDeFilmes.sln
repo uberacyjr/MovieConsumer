@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filmes.Api", "Filmes.Api\Fi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filmes.Testes", "Filmes.Testes\Filmes.Testes.csproj", "{4F0A14D0-F35B-4306-9594-6FC0AA3CCD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filmes.Core", "Filmes.Core\Filmes.Core.csproj", "{F4250681-6D49-4A11-91B3-FE697E7F91EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filmes.Core", "Filmes.Core\Filmes.Core.csproj", "{F4250681-6D49-4A11-91B3-FE697E7F91EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filmes.Utils", "Filmes.Utils\Filmes.Utils.csproj", "{BFB83098-113D-4C0E-BE78-2523679317CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filmes.Util", "Filmes.Utils\Filmes.Util.csproj", "{BFB83098-113D-4C0E-BE78-2523679317CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

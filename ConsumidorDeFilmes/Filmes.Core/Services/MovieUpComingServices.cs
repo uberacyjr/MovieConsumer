@@ -1,5 +1,7 @@
-﻿using Filmes.Core.Interfaces;
-using Filmes.Core.Models;
+﻿using System.Linq;
+using System.Net;
+using Filmes.Core.Interfaces;
+using Filmes.Core.ResponseModels;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -31,8 +33,18 @@ namespace Filmes.Core.Services
 
         private static MovieUpComingDTO DeserializarResponse(IRestResponse response)
         {
-            var upcomingMovies = JsonConvert.DeserializeObject<MovieUpComingDTO>(response.Content);
-            return upcomingMovies;
+            var resultado = new MovieUpComingDTO();
+
+            if (response.StatusCode == HttpStatusCode.OK)
+                resultado = JsonConvert.DeserializeObject<MovieUpComingDTO>(response.Content);
+            else
+            {
+                resultado.Errors = JsonConvert.DeserializeObject<ErrorObject>(response.Content);
+                resultado.HttpStatusCode = resultado.HttpStatusCode;
+                resultado.Results = Enumerable.Empty<ResultDTO>().ToList();
+            }
+
+            return resultado;
         }
 
         private static RestClient CriarRequestApi(out RestRequest request)

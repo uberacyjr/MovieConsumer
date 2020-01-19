@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Filmes.Core\Filmes.Core.csproj" />
-    <ProjectReference Include="..\Filmes.Utils\Filmes.Utils.csproj" />
+    <ProjectReference Include="..\Filmes.Utils\Filmes.Util.csproj" />
   </ItemGroup>
 
 </Project>
