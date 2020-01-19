@@ -1,4 +1,4 @@
-﻿using Filmes.Core.ResponseModels;
+﻿using Filmes.Core.ResponseDTO.BaseDTO;
 
 namespace Filmes.Core.Interfaces
 {

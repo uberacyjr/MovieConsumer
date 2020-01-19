@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Filmes.Core.Interfaces;
-using Filmes.Core.ResponseModels;
+using Filmes.Core.ResponseDTO.BaseDTO;
 using Filmes.Core.Services;
 using Filmes.Infraestrutura.InfraestruturaServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Filmes.Core.ResponseModels;
+using Filmes.Core.ResponseDTO.MoviesUpComingDTO;
 
 namespace Filmes.Api.Models
 {

@@ -1,4 +1,4 @@
-﻿using Filmes.Core.ResponseModels;
+﻿using Filmes.Core.ResponseDTO.MoviesUpComingDTO;
 
 namespace Filmes.Core.Interfaces
 {

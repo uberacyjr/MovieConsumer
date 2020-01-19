@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using Filmes.Core.Interfaces;
-using Filmes.Core.ResponseModels;
+using Filmes.Core.ResponseDTO.MoviesUpComingDTO;
 using Filmes.Core.Services;
 using Filmes.Infraestrutura.InfraestruturaServices;
 

@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using Filmes.Api.Models;
 using Filmes.Core.Interfaces;
-using Filmes.Core.ResponseModels;
+using Filmes.Core.ResponseDTO.MoviesUpComingDTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Filmes.Api.Controllers
