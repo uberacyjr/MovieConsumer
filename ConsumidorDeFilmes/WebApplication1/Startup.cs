@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Filmes.Core.Interfaces;
 using Filmes.Core.Services;
 using Filmes.Infraestrutura.InfraestruturaServices;
@@ -8,17 +12,25 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Filmes.Api
+namespace WebApplication1
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
             services.AddTransient<IMovieUpComing, MovieUpComingServices>();
             services.AddTransient<IApiSettings, ApiSettingsService>();
             services.AddTransient<IMovieApiConsumer, MovieApiConsumerServices>();
+            services.AddTransient<IMovieGenre, MovieGenreServices>();
             services.AddControllers();
         }
 
@@ -30,8 +42,14 @@ namespace Filmes.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseRouting();
 
-           
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

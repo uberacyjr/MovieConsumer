@@ -16,7 +16,7 @@ namespace Filmes.Testes
         {
             var apiSettings = new ApiSettingsService();
             var movieConsumer = new MovieApiConsumerServices(apiSettings);
-            _movie = new MovieUpComingServices(apiSettings, movieConsumer, new MovieGenreServices(apiSettings, movieConsumer));
+            _movie = new MovieUpComingServices(apiSettings, movieConsumer);
         }
 
         [TestMethod]

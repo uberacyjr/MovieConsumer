@@ -21,4 +21,10 @@ Desenvolver uma API que apresente os próximos filmes a serem lançados no cinem
 
 ## Outras Informações
 
+
+## Instruções de uso
 Rodar o comando "dotnet run" dentro da pasta ConsumidorDeFilmes\Filmes.Api
+Chamadas disponíveis da API:
+  - https://localhost:5001/api/filme
+  - https://localhost:5001/api/filme?language=en-US
+  - https://localhost:5001/api/filme?language=en-US&page=2

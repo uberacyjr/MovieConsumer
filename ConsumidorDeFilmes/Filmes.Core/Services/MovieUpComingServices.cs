@@ -22,10 +22,9 @@ namespace Filmes.Core.Services
         private readonly string Url;
         private const string EndPoint = "/movie/upcoming";
 
-        public MovieUpComingServices(IApiSettings apiSettings, IMovieApiConsumer movieApiConsumer, IMovieGenre movieGenre)
+        public MovieUpComingServices(IApiSettings apiSettings, IMovieApiConsumer movieApiConsumer)
         {
             _MovieApiConsumer = movieApiConsumer;
-            _MovieGenre = movieGenre;
             Url = apiSettings.ObterAppSettings().BaseUrl + EndPoint;
         }
 
@@ -36,7 +35,7 @@ namespace Filmes.Core.Services
             _MovieApiConsumer.AdicionarParametrosQueryString(requestParameters, request);
             Task<IRestResponse> restResponse = _MovieApiConsumer.ObterResponseApi(client, request);
             MovieUpComingDTO upcomingMovies = DeserializarResponse(restResponse);
-            AdicionarGeneroNosFilmes(language, upcomingMovies);
+            //AdicionarGeneroNosFilmes(language, upcomingMovies);
 
             return upcomingMovies;
         }
