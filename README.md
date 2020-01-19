@@ -47,7 +47,7 @@ APIs disponíveis:
  - https://www.newtonsoft.com/json
    NewtonSoft para facilitar a serialização e desserialização.
  - https://www.nuget.org/packages/Microsoft.NET.Test.SDK
-   Biblioteca para testes da mBcrosoft
+   Biblioteca para testes da microsoft
    
 ## Outras Informações
 - Projeto de teste feito para realizar testes de integração com a API consumida. 
