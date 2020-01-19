@@ -1,4 +1,7 @@
-﻿namespace Filmes.Infraestrutura
+﻿using System;
+using System.Collections.Generic;
+
+namespace Filmes.Infraestrutura
 {
     public class ApiSettings
     {

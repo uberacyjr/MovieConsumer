@@ -18,6 +18,7 @@ namespace Filmes.Api
             services.AddOptions();
             services.AddTransient<IMovieUpComing, MovieUpComingServices>();
             services.AddTransient<IApiSettings, ApiSettingsService>();
+            services.AddTransient<IMovieApiConsumer, MovieApiConsumerServices>();
             services.AddControllers();
         }
 

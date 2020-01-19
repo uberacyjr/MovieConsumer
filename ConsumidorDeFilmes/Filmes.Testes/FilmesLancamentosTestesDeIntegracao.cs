@@ -14,13 +14,13 @@ namespace Filmes.Testes
 
         public FilmesLancamentosTestesDeIntegracao()
         {
-            _movie = new MovieUpComingServices(new ApiSettingsService());
+            _movie = new MovieUpComingServices(new ApiSettingsService(), new MovieApiConsumerServices(new ApiSettingsService()));
         }
 
         [TestMethod]
         public void Quando_Requisitar_API_Sem_Parametros_Retorna_Lista_Filmes_Lancamentos()
         {
-            MovieUpComingDTO upComingMovies = _movie.GetMoviesUpComing("pt-BR",1, "");
+            MovieUpComingDTO upComingMovies = _movie.GetMoviesUpComing("pt-BR", 1, "");
             Assert.IsTrue(upComingMovies.Results.Any());
         }
 

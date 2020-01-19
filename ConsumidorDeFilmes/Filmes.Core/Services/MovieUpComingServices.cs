@@ -1,5 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using Filmes.Core.Interfaces;
 using Filmes.Core.ResponseModels;
 using Filmes.Infraestrutura.Interfaces;
@@ -13,38 +16,36 @@ namespace Filmes.Core.Services
     /// </summary>
     public class MovieUpComingServices : IMovieUpComing
     {
-        private readonly IApiSettings _ApiSettings;
+        private readonly IMovieApiConsumer _MovieApiConsumer;
         private readonly string Url;
-        public MovieUpComingServices(IApiSettings apiSettings)
+        private readonly string EndPoint = "/movie/upcoming";
+
+        public MovieUpComingServices(IApiSettings apiSettings, IMovieApiConsumer movieApiConsumer)
         {
-            _ApiSettings = apiSettings;
-            Url = _ApiSettings.ObterAppSettings().BaseUrl + "/movie/upcoming";
+            _MovieApiConsumer = movieApiConsumer;
+            Url = apiSettings.ObterAppSettings().BaseUrl + EndPoint;
         }
 
         public MovieUpComingDTO GetMoviesUpComing(string language, int page, string region)
         {
-            RestClient client = CriarRequestApi(out RestRequest request);
-            AdicionarParametrosQueryString(language, page, region, request);
-            MovieUpComingDTO upcomingMovies = ObterResponseApi(client, request);
+            RestClient client = _MovieApiConsumer.CriarRequestApi(out RestRequest request, Url);
+            Dictionary<string, string> requestParameters = CriarRequestParameters(language, page, region);
+            _MovieApiConsumer.AdicionarParametrosQueryString(requestParameters, request);
+            Task<IRestResponse> restResponse = _MovieApiConsumer.ObterResponseApi(client, request);
+            MovieUpComingDTO upcomingMovies = DeserializarResponse(restResponse);
+
             return upcomingMovies;
         }
 
-        private static MovieUpComingDTO ObterResponseApi(IRestClient client, IRestRequest request)
-        {
-            IRestResponse response = client.Get(request);
-            MovieUpComingDTO upcomingMovies = DeserializarResponse(response);
-            return upcomingMovies;
-        }
-
-        private static MovieUpComingDTO DeserializarResponse(IRestResponse response)
+        private static MovieUpComingDTO DeserializarResponse(Task<IRestResponse> response)
         {
             var resultado = new MovieUpComingDTO();
 
-            if (response.StatusCode == HttpStatusCode.OK)
-                resultado = JsonConvert.DeserializeObject<MovieUpComingDTO>(response.Content);
+            if (response.Result.StatusCode == HttpStatusCode.OK)
+                resultado = JsonConvert.DeserializeObject<MovieUpComingDTO>(response.Result.Content);
             else
             {
-                resultado.Errors = JsonConvert.DeserializeObject<ErrorObjectDTO>(response.Content);
+                resultado.Errors = JsonConvert.DeserializeObject<ErrorObjectDTO>(response.Result.Content);
                 resultado.HttpStatusCode = resultado.HttpStatusCode;
                 resultado.Results = Enumerable.Empty<ResultDTO>().ToList();
             }
@@ -52,19 +53,6 @@ namespace Filmes.Core.Services
             return resultado;
         }
 
-        private RestClient CriarRequestApi(out RestRequest request)
-        {
-            var client = new RestClient(Url);
-            request = new RestRequest(Url);
-            return client;
-        }
-
-        private void AdicionarParametrosQueryString(string language, int page, string region, IRestRequest request)
-        {
-            request.AddParameter("api_key", _ApiSettings.ObterAppSettings().MovieApiKey);
-            request.AddParameter("language", language);
-            request.AddParameter("page", page);
-            request.AddParameter("regioan", region);
-        }
+        private static Dictionary<string, string> CriarRequestParameters(string language, int page, string region) => new Dictionary<string, string> { { "language", language }, { "page", page.ToString() }, { "regioan", region } };
     }
 }
