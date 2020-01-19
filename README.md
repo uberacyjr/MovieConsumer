@@ -1,4 +1,4 @@
-# Projeto Consumidor de Filmes
+# Consumidor de Filmes
 
 ## Objetivo
 
