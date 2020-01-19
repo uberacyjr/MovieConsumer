@@ -29,11 +29,16 @@ APIs disponíveis:
    - Camada responsável por testes de integração entre a estrutura da aplicação Consumidor de Filmes e a The Movie Database API
 
 ## Padrões Utilizados
- - TDD: Desenvolvimento Orientado por Testes foi utilizado para melhorar a segurança no desenvolvimento e manutenções futuras.
- - DTO: Data Transfer Object foi utilizado para representar as estruturas json consumidas nas responses da API.
- - VM: View Model foi utilizado para apresentar as informações das DTOs retornadas do projeto Core na camada da Web API.
- - Injeção de Depêndencia: Utilizado para evitar o alto acomplamento e facilitar os testes.
- - DRY (não repita você mesmo) encapsular lógicas parecidas/iguais em métodos únicos para tentar minimizar o máximo de código duplicado.
+### TDD
+ - Desenvolvimento Orientado por Testes foi utilizado para melhorar a segurança no desenvolvimento e manutenções futuras.
+### DTO (Data Transfer Object)
+ - Foi utilizado para representar as estruturas json consumidas nas responses da API.
+### VM (View Model) 
+ - Foi utilizado para apresentar as informações das DTOs retornadas do projeto Core na camada da Web API.
+### Injeção de Depêndencia
+ - Utilizado para evitar o alto acomplamento e facilitar os testes.
+### DRY (não repita você mesmo) 
+ - Encapsular lógicas parecidas/iguais em métodos únicos para tentar minimizar o máximo de código duplicado.
 
 ## Bibliotecas Utilizadas
  - http://restsharp.org/
