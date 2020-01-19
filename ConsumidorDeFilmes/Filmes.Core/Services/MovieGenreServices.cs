@@ -31,8 +31,8 @@ namespace Filmes.Core.Services
             Dictionary<string, string> requestParameters = CriarRequestParameters(language);
             _MovieApiConsumer.AdicionarParametrosQueryString(requestParameters, request);
             Task<IRestResponse> restResponse = _MovieApiConsumer.ObterResponseApi(client, request);
-            MovieGenreDTO upcomingMovies = DeserializarResponse(restResponse);
-            return  new MovieGenreDTO();
+            MovieGenreDTO movieGenre = DeserializarResponse(restResponse);
+            return movieGenre;
         }
 
         private static MovieGenreDTO DeserializarResponse(Task<IRestResponse> response)

@@ -17,12 +17,14 @@ namespace Filmes.Core.Services
     public class MovieUpComingServices : IMovieUpComing
     {
         private readonly IMovieApiConsumer _MovieApiConsumer;
+        private readonly IMovieGenre _MovieGenre;
         private readonly string Url;
         private readonly string EndPoint = "/movie/upcoming";
 
-        public MovieUpComingServices(IApiSettings apiSettings, IMovieApiConsumer movieApiConsumer)
+        public MovieUpComingServices(IApiSettings apiSettings, IMovieApiConsumer movieApiConsumer, IMovieGenre movieGenre)
         {
             _MovieApiConsumer = movieApiConsumer;
+            _MovieGenre = movieGenre;
             Url = apiSettings.ObterAppSettings().BaseUrl + EndPoint;
         }
 
@@ -33,8 +35,31 @@ namespace Filmes.Core.Services
             _MovieApiConsumer.AdicionarParametrosQueryString(requestParameters, request);
             Task<IRestResponse> restResponse = _MovieApiConsumer.ObterResponseApi(client, request);
             MovieUpComingDTO upcomingMovies = DeserializarResponse(restResponse);
+            AdicionarGeneroNosFilmes(language, upcomingMovies);
 
             return upcomingMovies;
+        }
+
+        private void AdicionarGeneroNosFilmes(string language, MovieUpComingDTO upcomingMovies)
+        {
+            if(!upcomingMovies.Results.Any())
+                return;
+
+            MovieGenreDTO genres = _MovieGenre.GetGenreListByLanguage(language);
+            AdicionarGeneroDeAcordoComId(upcomingMovies, genres);
+        }
+
+        private static void AdicionarGeneroDeAcordoComId(MovieUpComingDTO upcomingMovies, MovieGenreDTO genres)
+        {
+            foreach (ResultDTO movie in upcomingMovies.Results)
+            {
+                movie.Genres = new List<string>();
+
+                foreach (string genreName in movie.Genre_ids.Select(genreId => genres.Genres.First(f => f.Id == genreId)?.Name))
+                {
+                    movie.Genres.Add(genreName);
+                }
+            }
         }
 
         private static MovieUpComingDTO DeserializarResponse(Task<IRestResponse> response)

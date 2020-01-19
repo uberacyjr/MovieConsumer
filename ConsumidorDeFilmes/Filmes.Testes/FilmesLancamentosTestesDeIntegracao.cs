@@ -14,7 +14,9 @@ namespace Filmes.Testes
 
         public FilmesLancamentosTestesDeIntegracao()
         {
-            _movie = new MovieUpComingServices(new ApiSettingsService(), new MovieApiConsumerServices(new ApiSettingsService()));
+            var apiSettings = new ApiSettingsService();
+            var movieConsumer = new MovieApiConsumerServices(apiSettings);
+            _movie = new MovieUpComingServices(apiSettings, movieConsumer, new MovieGenreServices(apiSettings, movieConsumer));
         }
 
         [TestMethod]
@@ -22,6 +24,13 @@ namespace Filmes.Testes
         {
             MovieUpComingDTO upComingMovies = _movie.GetMoviesUpComing("pt-BR", 1, "");
             Assert.IsTrue(upComingMovies.Results.Any());
+        }
+
+        [TestMethod]
+        public void Quando_Requisitar_API_Sem_Parametros_Retorna_Lista_Filmes_Lancamentos_Com_Descricao_Dos_Generos()
+        {
+            MovieUpComingDTO upComingMovies = _movie.GetMoviesUpComing("pt-BR", 1, "");
+            Assert.IsTrue(upComingMovies.Results.Any(a=>a.Genres.Any()));
         }
 
         [TestMethod]
