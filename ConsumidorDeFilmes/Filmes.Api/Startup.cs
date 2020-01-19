@@ -12,16 +12,9 @@ namespace Filmes.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-        
-        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IConfiguration>(Configuration);
             services.AddOptions();
             services.AddTransient<IMovieUpComing, MovieUpComingServices>();
             services.AddTransient<IApiSettings, ApiSettingsService>();
@@ -36,14 +29,8 @@ namespace Filmes.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
 
-            app.UseHttpsRedirection();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+           
         }
     }
 }

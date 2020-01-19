@@ -19,4 +19,6 @@ Desenvolver uma API que apresente os próximos filmes a serem lançados no cinem
  - https://www.newtonsoft.com/json
    NewtonSoft para serialização e desserialização de objetos
 
-## Outras Observações
+## Outras Informações
+
+Rodar o comando "dotnet run" dentro da pasta ConsumidorDeFilmes\Filmes.Api
