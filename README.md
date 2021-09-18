@@ -36,9 +36,9 @@ Available APIs:
 ### VM (View Model)
  - It was used to present the information of the DTOs returned from the Core project in the layer of the Web API.
 ### Dependency Injection
- - Used to avoid high compliance and facilitate testing.
+ - Used to avoid high coupling and facilitate testing.
 ### DRY (don't repeat yourself)
- - Encapsulate similar / equal logic in unique methods to try to minimize as much duplicate code.
+ - Encapsulate similar / equal logic in unique methods to try to minimize as much as possible the duplication of code.
 ### Single Responsibility Principle
  - Principle of single responsibility was used to simplify classes and methods so that each one has a minimum of responsibilities to facilitate the reuse of code and maintenance.
 ### Principles of Object Oriented Programming (Abstraction, Encapsulation, Inheritance)
@@ -55,4 +55,4 @@ Available APIs:
    
 ## Other information
 - Test project made to perform integration tests with the consumed API.
-- Run all tests every time you change something or to ensure that the integration part between the application and the API is working as expected.
+- Run all tests every time you change something to ensure that the integration part between the application and the API is working as expected.
